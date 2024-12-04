@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Casino La Fortuna - Financial Management Software</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .header {
+            background-color: #1E40AF;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+        .header img {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            max-width: 150px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin: 0 0 10px 0;
+        }
+        .header p {
+            font-size: 1.2em;
+            margin: 5px 0;
+            color: #e2e8f0;
+        }
+        .section {
+            padding: 40px 20px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .section h2, .section h3 {
+            color: #1E40AF;
+            margin-bottom: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .feature-card {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-card img {
+            width: 100%;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        .feature-card h4 {
+            color: #1E40AF;
+            margin: 10px 0;
+        }
+        .mermaid-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .cta {
+            text-align: center;
+            background: linear-gradient(135deg, #1E40AF 0%, #2563EB 100%);
+            color: white;
+            padding: 40px 20px;
+            border-radius: 0 0 8px 8px;
+        }
+        .cta h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            background-color: white;
+            color: #1E40AF;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .header {
+                padding: 20px;
+            }
+        }
+    </style>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'neutral',
+            flowchart: {
+                curve: 'basis'
+            }
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <!-- Sección 1: Portada -->
+    <div class="header">
+        <img src="https://i.ibb.co/n79Khj5/logo.png" alt="Casino La Fortuna Logo" />
+        <h1>Casino La Fortuna</h1>
+        <p>A Software for Financial Management</p>
+        <p style="color: #e2e8f0; font-size: 1rem;">
+            Developer: William Pérez Muñoz<br>
+            2758315 - ADSO SENA
+        </p>
+    </div>
+
+    <!-- Sección 2: Introducción y Características -->
+    <div class="section">
+        <h2>Introduction to the Project</h2>
+        <p>Casino La Fortuna is a comprehensive financial management software designed specifically for small and medium businesses. Our solution automates critical processes, streamlines customer management, and generates detailed financial reports with precision and reliability.</p>
+        
+        <div class="grid">
+            <div class="feature-card">
+                <h4>User-friendly Interface</h4>
+                <img src="https://i.ibb.co/CJ5Ssg4/dashboard-admin.png" alt="Dashboard Admin" />
+                <p>Modern and intuitive design for seamless navigation and operation.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Advanced Security</h4>
+                <p>Robust protection system using JWT authentication and encryption.</p>
+                <div class="mermaid-container">
+                    <pre class="mermaid">
+flowchart TB
+    A["Login requested\nForm submitted"] --> B["Validate credentials"]
+    B --> C{"Valid credentials?"}
+    C -->|Yes| D["Generate JWT"]
+    C -->|No| E["Return error"]
+    D --> F["Send JWT token"]
+    F --> G["Store JWT"]
+    G --> H["Access granted"]
+    E --> I["Request retry"]
+
+    style A fill:#dbeafe,stroke:#1E40AF
+    style B fill:#fef3c7,stroke:#f59e0b
+    style C fill:#f3f4f6,stroke:#6b7280
+    style D fill:#bbf7d0,stroke:#059669
+    style E fill:#fee2e2,stroke:#dc2626
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección 3: Requisitos y Recomendaciones -->
+    <div class="section">
+        <h3>Project Requirements and Guidelines</h3>
+        
+        <!-- Requisitos Esenciales -->
+        <div class="requirements-list">
+            <h4>Essential Requirements</h4>
+            <ul>
+                <li>
+                    <strong>MUST:</strong>
+                    We must ensure the highest level of data security and privacy protection.
+                </li>
+                <li>
+                    <strong>SHOULD:</strong>
+                    Business owners should implement regular training sessions for their staff.
+                </li>
+                <li>
+                    <strong>COULD:</strong>
+                    This innovation could transform how businesses handle their financial operations.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Características Técnicas -->
+        <div class="grid">
+            <div class="feature-card">
+                <img src="https://i.ibb.co/x6KFDbs/Scalability.jpg" alt="Scalability" />
+                <h4>Scalability</h4>
+                <p>Grows seamlessly with your business needs.</p>
+            </div>
+            <div class="feature-card">
+                <img src="https://i.ibb.co/VpF9C7n/Reliability.jpg" alt="Reliability" />
+                <h4>Reliability</h4>
+                <p>Consistent and dependable performance.</p>
+            </div>
+            <div class="feature-card">
+                <img src="https://i.ibb.co/P6q47mJ/Efficiency.jpg" alt="Efficiency" />
+                <h4>Efficiency</h4>
+                <p>Streamlined processes for maximum productivity.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección 4: Sugerencias y Valoraciones -->
+    <div class="section">
+        <h3>Expert Insights and Recommendations</h3>
+        <div class="requirements-list">
+            <h4>Professional Recommendations</h4>
+            <ul>
+                <li>
+                    <strong>HAD BETTER:</strong>
+                    You had better implement comprehensive data backup strategies to ensure business continuity.
+                </li>
+                <li>
+                    <strong>I THINK THAT:</strong>
+                    I think that this software represents a significant advancement in financial management technology.
+                </li>
+                <li>
+                    <strong>I CONSIDER THAT:</strong>
+                    I consider that Casino La Fortuna will be a turning point in how businesses handle their financial operations.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Llamado a la Acción -->
+    <div class="cta">
+        <h3>Transform Your Financial Management Today</h3>
+        <p>Experience the future of business finance with Casino La Fortuna</p>
+        <button class="cta-button" onclick="window.location.href='https://casino-la-fortuna.vercel.app/';">Get Started Now</button>
+    </div>
+</div>
+</body>
+</html>

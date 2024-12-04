@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Flow Diagram</title>
+    <!-- Include Mermaid -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9fafb;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h2 {
+            color: #1E40AF;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .mermaid {
+            background-color: #f3f4f6;
+            border-radius: 8px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Authentication Flow Process</h2>
+        <pre class="mermaid">
+        flowchart TB
+            A["Login requested<br>Form submitted"] --> B["Validate credentials on the server"]
+            B --> C{"Are credentials valid?"}
+            C -->|Yes| D["Generate JWT token"]
+            C -->|No| E["Return error<br>Invalid credentials"]
+            D --> F["Send JWT token<br>to the client"]
+            F --> G["Client stores JWT<br>(localStorage or cookies)"]
+            G --> H["Access granted to protected resources"]
+            E --> I["Request re-entry of credentials"]
+
+            style A fill:#dbeafe,stroke:#1E40AF,stroke-width:2px
+            style B fill:#fef3c7,stroke:#f59e0b,stroke-width:2px
+            style C fill:#f3f4f6,stroke:#6b7280,stroke-width:2px
+            style D fill:#bbf7d0,stroke:#059669,stroke-width:2px
+            style E fill:#fee2e2,stroke:#dc2626,stroke-width:2px
+            style F fill:#bbf7d0,stroke:#059669,stroke-width:2px
+            style G fill:#bbf7d0,stroke:#059669,stroke-width:2px
+            style H fill:#bbf7d0,stroke:#059669,stroke-width:2px
+            style I fill:#fee2e2,stroke:#dc2626,stroke-width:2px
+        </pre>
+    </div>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: "neutral",
+            flowchart: {
+                htmlLabels: true,
+                curve: "basis"
+            }
+        });
+    </script>
+</body>
+</html>
